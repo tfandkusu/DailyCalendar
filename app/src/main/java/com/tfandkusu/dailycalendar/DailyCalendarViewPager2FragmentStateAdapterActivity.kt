@@ -14,13 +14,17 @@ class DailyCalendarViewPager2FragmentStateAdapterActivity : AppCompatActivity() 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_daily_calendar_view_pager2_fragment_state_adapter)
 
+        val fragmentStateAdapter = DailyCalendarFragmentStateAdapter(this)
+
         viewModel.days.observe(this, Observer { days ->
             days?.let {
-                val fragmentStateAdapter = DailyCalendarFragmentStateAdapter(this, it)
-                viewPager.adapter = fragmentStateAdapter
+                fragmentStateAdapter.days.clear()
+                fragmentStateAdapter.days.addAll(it)
+                fragmentStateAdapter.notifyDataSetChanged()
             }
         })
 
+        viewPager.adapter = fragmentStateAdapter
         viewModel.onCreate()
     }
 }

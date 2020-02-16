@@ -7,10 +7,11 @@ import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.soywiz.klock.DateTimeTz
 
 class DailyCalendarFragmentStateAdapter(
-    fragmentActivity: FragmentActivity,
-    val days: List<DateTimeTz>
-) :
-    FragmentStateAdapter(fragmentActivity) {
+    fragmentActivity: FragmentActivity
+) : FragmentStateAdapter(fragmentActivity) {
+
+    val days = mutableListOf<DateTimeTz>()
+
     override fun getItemCount(): Int {
         return days.size
     }
