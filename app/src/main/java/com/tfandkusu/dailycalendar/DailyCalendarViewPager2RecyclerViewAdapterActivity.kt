@@ -17,11 +17,21 @@ class DailyCalendarViewPager2RecyclerViewAdapterActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_daily_calendar_view_pager2_recycler_view_adapter)
-        viewModel.days.observe(this, Observer { days ->
-            days?.let {
-                adapter.update(listOf(DaysItem(it), TimeItem()))
-            }
-        })
+        if (false) {
+            // Test for vertical scroll in horizontal scroll
+            viewModel.days.observe(this, Observer { days ->
+                days?.let {
+                    adapter.update(listOf(DaysItem(it), TimeItem()))
+                }
+            })
+        } else {
+            viewModel.days.observe(this, Observer { days ->
+                days?.let {
+                    adapter.update(days.map { DailyCalendarItem(it) })
+                }
+            })
+
+        }
         viewPager.adapter = adapter
         viewModel.onCreate()
     }

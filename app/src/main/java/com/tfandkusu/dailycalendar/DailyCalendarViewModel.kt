@@ -25,7 +25,7 @@ class DailyCalendarViewModel(private val currentTimeGetter: CurrentTimeGetter) :
                 today += 1.days
             }
             days.value = items
-            delay(1000)
+            delay(3000)
             startDay += 1.days
             @Suppress("ConstantConditionIf")
             if (!changeTest)
