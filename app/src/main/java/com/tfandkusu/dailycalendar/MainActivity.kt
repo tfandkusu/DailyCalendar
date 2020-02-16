@@ -10,6 +10,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        viewPagerFragmentPagerAdapterButton.setOnClickListener {
+            val intent =
+                Intent(this, DailyCalendarViewPagerFragmentPagerAdapterActivity::class.java)
+            startActivity(intent)
+
+        }
         viewPager2RecyclerViewAdapterButton.setOnClickListener {
             val intent =
                 Intent(this, DailyCalendarViewPager2RecyclerViewAdapterActivity::class.java)

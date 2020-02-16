@@ -32,7 +32,7 @@ class DailyCalendarFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.list_item_daily_calendar, container)
+        val view = inflater.inflate(R.layout.list_item_daily_calendar, container, false)
         val dateTimeLong = arguments?.getLong(EXTRA_DATE_TIME, 0L) ?: 0L
         dateTimeTz = DateTimeTz.fromUnixLocal(dateTimeLong)
         val viewHelper = DailyCalendarItemViewHelper(view)
