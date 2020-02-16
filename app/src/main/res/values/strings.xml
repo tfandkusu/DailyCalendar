@@ -4,6 +4,7 @@
     <string name="view_pager_fragment_state_pager_adapter_adapter">ViewPager + FragmentStatePagerAdapter</string>
     <string name="view_pager_2_recycler_view_adapter">ViewPager2 + RecyclerView.Adapter</string>
     <string name="view_pager_2_fragment_fragment_state_adapter">ViewPager2 + FragmentStateAdapter</string>
+    <string name="recycler_view_snap_helper">RecyclerView + SnapHelper</string>
 
     <string name="year">年</string>
     <string name="month">月</string>

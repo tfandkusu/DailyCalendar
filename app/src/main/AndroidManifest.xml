@@ -10,6 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".DailyCalendarRecyclerViewSnapHelperActivity"></activity>
         <activity android:name=".DailyCalendarViewPagerFragmentStatePagerAdapterActivity" />
         <activity android:name=".DailyCalendarViewPagerFragmentPagerAdapterActivity" />
         <activity android:name=".DailyCalendarViewPager2FragmentStateAdapterActivity" />
