@@ -19,9 +19,7 @@ class DailyCalendarViewPager2RecyclerViewAdapterActivity : AppCompatActivity() {
         setContentView(R.layout.activity_daily_calendar_view_pager2_recycler_view_adapter)
         viewModel.days.observe(this, Observer { days ->
             days?.let {
-                adapter.update(it.map { day ->
-                    DailyCalendarItem(day)
-                })
+                adapter.update(listOf(DaysItem(it), TimeItem()))
             }
         })
         viewPager.adapter = adapter
