@@ -14,7 +14,11 @@ class MainActivity : AppCompatActivity() {
             val intent =
                 Intent(this, DailyCalendarViewPagerFragmentPagerAdapterActivity::class.java)
             startActivity(intent)
-
+        }
+        viewPagerFragmentStatePagerAdapterButton.setOnClickListener {
+            val intent =
+                Intent(this, DailyCalendarViewPagerFragmentStatePagerAdapterActivity::class.java)
+            startActivity(intent)
         }
         viewPager2RecyclerViewAdapterButton.setOnClickListener {
             val intent =

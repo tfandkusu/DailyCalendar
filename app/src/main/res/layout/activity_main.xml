@@ -18,6 +18,17 @@
         android:textAllCaps="false" />
 
     <Button
+        android:id="@+id/viewPagerFragmentStatePagerAdapterButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/view_pager_fragment_state_pager_adapter_adapter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewPagerFragmentPagerAdapterButton"
+        android:textAllCaps="false" />
+
+    <Button
         android:id="@+id/viewPager2RecyclerViewAdapterButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -25,7 +36,7 @@
         android:text="@string/view_pager_2_recycler_view_adapter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/viewPagerFragmentPagerAdapterButton"
+        app:layout_constraintTop_toBottomOf="@+id/viewPagerFragmentStatePagerAdapterButton"
         android:textAllCaps="false" />
 
     <Button
