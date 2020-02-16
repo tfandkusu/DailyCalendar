@@ -12,7 +12,7 @@ class DailyCalendarViewModel(private val currentTimeGetter: CurrentTimeGetter) :
     fun onCreate() {
         var today = currentTimeGetter.get()
         val days = mutableListOf<DateTimeTz>()
-        for (i in 0 until 100) {
+        for (i in 0 until 10) {
             days.add(today)
             today += 1.days
         }

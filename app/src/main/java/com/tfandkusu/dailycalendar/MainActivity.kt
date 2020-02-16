@@ -15,5 +15,10 @@ class MainActivity : AppCompatActivity() {
                 Intent(this, DailyCalendarViewPager2RecyclerViewAdapterActivity::class.java)
             startActivity(intent)
         }
+        viewPager2FragmentStateAdapterButton.setOnClickListener {
+            val intent =
+                Intent(this, DailyCalendarViewPager2FragmentStateAdapterActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
