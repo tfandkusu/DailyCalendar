@@ -1,8 +1,10 @@
 package com.tfandkusu.dailycalendar
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
+import androidx.viewpager2.widget.ViewPager2
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
 import kotlinx.android.synthetic.main.activity_daily_calendar_view_pager2_recycler_view_adapter.*
@@ -33,6 +35,11 @@ class DailyCalendarViewPager2RecyclerViewAdapterActivity : AppCompatActivity() {
 
         }
         viewPager.adapter = adapter
+        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+            override fun onPageSelected(position: Int) {
+                Log.d("DailyCalendar", "onPageSelected $position")
+            }
+        })
         viewModel.onCreate()
     }
 }
