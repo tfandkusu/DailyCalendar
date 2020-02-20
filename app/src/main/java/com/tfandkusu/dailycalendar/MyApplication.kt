@@ -12,6 +12,7 @@ class MyApplication : Application() {
         val myModule = module {
             single { CurrentTimeGetterImpl() as CurrentTimeGetter }
             viewModel { DailyCalendarViewModel(get()) }
+            viewModel { FragmentViewModel() }
         }
         startKoin {
             androidContext(this@MyApplication)

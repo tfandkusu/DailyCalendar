@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProviders
 import com.soywiz.klock.DateTimeTz
 
 class DailyCalendarFragment : Fragment() {
@@ -15,12 +16,17 @@ class DailyCalendarFragment : Fragment() {
         private const val EXTRA_STRING = "string"
     }
 
+    private lateinit var viewModel: FragmentViewModel
+
     private lateinit var dateTimeTz: DateTimeTz
 
     private var dateString = ""
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        viewModel = ViewModelProviders.of(this).get(FragmentViewModel::class.java)
 
         savedInstanceState?.let {
             dateString = it.getString(EXTRA_STRING, "")
@@ -39,6 +45,7 @@ class DailyCalendarFragment : Fragment() {
         val viewHelper = DailyCalendarItemViewHelper(view)
         viewHelper.bind(dateTimeTz)
         dateString = dateTimeTz.toString("YYYY/MM/dd")
+        viewModel.dateString = dateString
         return view
     }
 
